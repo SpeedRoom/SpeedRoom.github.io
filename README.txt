@@ -1,0 +1,1 @@
+bachelorproject van het 3de jaar industrieel ingenieur elektronica 
