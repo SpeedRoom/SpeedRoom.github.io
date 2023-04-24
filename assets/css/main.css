@@ -311,16 +311,16 @@ input, select, textarea {
 	}
 
 	blockquote {
-		border-left-color: #eeeeee;
+		border-left-color: #ffffff;
 	}
 
 	code {
 		background: rgba(220, 220, 220, 0.25);
-		border-color: #eeeeee;
+		border-color: #ffffff;
 	}
 
 	hr {
-		border-bottom-color: #eeeeee;
+		border-bottom-color: #ffffff;
 	}
 
 /* Row */
@@ -2057,7 +2057,7 @@ input, select, textarea {
 		}
 
 	.box {
-		border-color: #eeeeee;
+		border-color: #ffffff;
 	}
 
 /* Button */

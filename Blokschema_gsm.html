@@ -10,14 +10,6 @@
 
 
 	<style>
-ul1 {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #626060;
-  z-index: 2;
-}
 
 li1 {
   float: left;
@@ -26,15 +18,16 @@ li1 {
 
 li1 a, .dropbtn {
   display: inline-block;
-  color: black;
+  color: rgb(255, 255, 255);
+  background-color: rgba(0, 0, 0, 0.836);
   text-align: center;
-  padding: 16px 16px;
+  padding: 16px 42px;
   text-decoration: none;
   z-index: 2;
 }
 
 li1 a:hover, .dropdown:hover .dropbtn {
-  background-color: rgba(255,255,255,0.1);
+  background-color: rgba(0, 0, 0, 0.774);
 }
 
 li1.dropdown {
@@ -44,21 +37,21 @@ li1.dropdown {
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color:rgb(111, 111, 111);
+  background-color:rgb(0, 0, 0);
   min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(255, 255, 255, 0.1);
+  box-shadow: 0px 8px 16px 0px rgb(0, 0, 0);
   z-index: 3;
 }
 
 .dropdown-content a {
-  color: black;
-  padding: 12px 16px;
+  color: rgb(255, 255, 255);
+  padding: 12px 42px;
   text-decoration: none;
   display: block;
-  text-align: left;
+  text-align: center;
 }
 
-.dropdown-content a:hover {background-color: rgb(111, 111, 111);}
+.dropdown-content a:hover {background-color: rgb(0, 0, 0);}
 
 .dropdown:hover .dropdown-content {
   display: block;
