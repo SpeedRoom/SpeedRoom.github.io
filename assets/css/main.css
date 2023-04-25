@@ -297,6 +297,16 @@ input, select, textarea {
 			color: #18bfef !important;
 		}
 
+	aa{
+		color: #000000;
+		border-bottom-color: rgba(255, 255, 255, 0.5);
+	}
+
+		aa:hover {
+			border-bottom-color: transparent;
+			color: #18bfef !important;
+		}
+
 	strong, b {
 		color: #ffffff;
 	}
@@ -3678,3 +3688,6 @@ li1.dropdown {
 }
 
 
+a.one:link{
+	color:black;
+}
