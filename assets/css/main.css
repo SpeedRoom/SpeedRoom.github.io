@@ -3623,26 +3623,30 @@ input, select, textarea {
 
 		}
 /*dropdownmenu*/
+
+.navbar{
+	overflow: hidden;
+	background-color: rgb(66, 65, 65);
+}
 li1 {
-  float: inline-start;
-  z-index: 2;
+  float:left;
+  z-index: 1;
   overflow:auto;
   text-align:center;
-  
 }
 
 li1 a, .dropbtn {
-  display:block;
+  display:grid;
   color: rgb(255, 255, 255);
-  background-color: rgb(0, 0, 0);
+  background-color: rgb(66, 65, 65);
   text-align: center;
   padding: 16px 39px;
   text-decoration: none;
-  z-index: 1;
+  z-index: 2;
 }
 
 li1 a:hover, .dropdown:hover .dropbtn {
-  background-color: rgb(65, 64, 64);
+  background-color: rgb(85, 84, 84);
 }
 
 li1.dropdown {
@@ -3652,9 +3656,10 @@ li1.dropdown {
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color:rgb(0, 0, 0);
+  background-color:rgb(66, 65, 65);
   min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgb(0, 0, 0);
+  border: none;
+  box-shadow: 0px 8px 16px 0px rgb(66, 65, 65);
   z-index: 3;
 }
 
@@ -3666,8 +3671,10 @@ li1.dropdown {
   text-align: center;
 }
 
-.dropdown-content a:hover {background-color: rgb(65, 64, 64);}
+.dropdown-content a:hover {background-color: rgb(85, 84, 84);}
 
 .dropdown:hover .dropdown-content {
   display: block;
 }
+
+
