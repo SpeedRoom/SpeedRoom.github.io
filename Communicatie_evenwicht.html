@@ -95,13 +95,12 @@
 						<section class="post">
 							<header class="major">
 								<h1>Communicatie evenwichts-doolhof</h1>
-
 							</header>
-							<div class="image main"><img src="images/pic02.jpg" class="center"	alt="" style="margin-left: auto;
-								  margin-right: auto;width: 80%; height: 80%" /></div>
-							<p>Bij vallen van het balletje in het juiste gaatje zal de puzzel de juiste datum publishen. Dit gebeurt op het artikel dqkfjqmldk/Datum waarna
-								de centrale computer deze datum kan uitlezen en verder kan gebruiken. voor uitgebreidere uitleg over hoe de communicatie tussen de verschillende
-								puzzels en de centrale computer werkt, zie de pagina over de computer.
+							<p>
+								Om ervoor te zorgen dat de centrale computer op de hoogte is van de voltooiing van de puzzel en de juiste datum weet, is communicatie tussen de verschillende computers nodig. Deze communicatie verloopt via het MQTT-protocol, waarbij berichten van de ESP naar de broker worden gestuurd die op de centrale computer draait.
+							</p>
+							<p>
+								Wanneer het balletje in het juiste gaatje valt, zal de puzzel de juiste datum publiceren via het artikel "esp_doolhof/output". Op deze manier kan de centrale computer de datum uitlezen en verder gebruiken. Voor meer gedetailleerde informatie over hoe de communicatie tussen de verschillende puzzels en de centrale computer werkt, verwijzen we naar de pagina over de computer.
 							</p>
 							
 						</section>

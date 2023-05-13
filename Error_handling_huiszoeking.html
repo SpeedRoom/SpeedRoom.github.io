@@ -96,15 +96,28 @@
 						<section class="post">
 							<header class="major">
 								<h1>Error Handling huiszoeking</h1>
-								<p>Hieronder vindt u frequente problemen die zich kunnen voordoen en hoe u deze kunt gaan oplossen als gebruiker.</p>
 							</header>
-								<h3> error 1:</h3>
-								<p>hieronder de oplossing</p>
-								<h3> error 2:</h3>
-								<p>hieronder de oplossing</p>
-
-
-								
+								<h3> error 1: antenne werkt niet bij complexe code</h3>
+								<p> Er is te veel interferentie van de schakeling rondom de ESP32. Door de schakeling verder weg te zetten van de antenne kan dit probleem worden opgelost. In de volgende figuur
+									is te zien dat er zeer weinig BLE-devices worden ontdekt op onze PCB (wij zijn op zoek naar een ESP32 met adres '7c:9e:bd:ed:58:1a').</p>
+								<img src="images/weinigresultaten.png" alt="" />
+								<p> Wanneer we ons alleen focussen op de BLE en de complexe code weglaten, kunnen we het volgende resultaat verkrijgen: (het gezochte adres wordt gevonden). </p>
+								<img src="images/middelmatigresultaten.png" alt="" />
+								<p> Het adres die werd gezocht wordt nu al gevonden. Nu de eenvoudige code op een doit v1 devkit:</p>
+								<img src="images/weinigresultaten.png" alt="" />
+								<p>  Door de eenvoudige code op een DOIT v1 Devkit te gebruiken, worden er veel meer resultaten gevonden.
+									De antenne werkt dus niet goed genoeg om de complexe code te ondersteunen. Daarom was het nodig om naast
+									onze eigen PCB ook een Devkit te gebruiken. </p>
+								<h3> error 2: rfid reader onbetrouwbaar</h3>
+								<p> De RFID reader blijkt onbetrouwbaar te zijn bij het deel van de hond met de complexere code. Het programma werkt de ene dag volledig,
+									terwijl het de andere dag niet werkt. We hebben gemerkt dat een minder complexe code meestal wel werkt. Het probleem zit hem in de IRQ
+									pin. De oplossing was om de IRQ pin niet aan te sluiten, waardoor het programma constant de tag verwerkt (ook als er geen tag is). Dit
+									is natuurlijk niet ideaal, omdat dit veel tijd van de processor kost. Het geluid is naar een andere core verplaatst dan het scannen,
+									zodat beide processen synchroon kunnen blijven werken. Voor het geluid is er dus geen probleem. De code werkt ook als de IRQ is
+									aangesloten, maar is dan zeer onbetrouwbaar en stopt meestal na één of twee scans.</p>
+								<h3> error 3: geluid werkt niet</h3>
+								<p> De code voor het geluid werkte apart van de volledige code (met RFID en BLE), maar niet wanneer deze samen gebruikt werden.
+									De oplossing was om de tweede core op de ESP32 te gebruiken, zodat het geluid wel samen met de rest van de code kan werken.</p>
 						</section>
 
 					</div>
