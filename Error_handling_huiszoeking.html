@@ -113,7 +113,9 @@
 									De oplossing was om de irq pin niet te connecteren, waardoor het programma constant de tag (die er soms niet is) verwerkt.
 									Dit is natuurlijk niet ideaal omdat het veel tijd kost van de processor. Het geluid werd op een andere core geplaatst dan het scannen zodat beide synchroon
 									kunnen verder 'werken', dus voor het geluid is dit geen probleem. MO: de code werkt ook als de irq is aangesloten, maar zeer onbetrouwbaar en stopt meestal na 1 of 2 scans.</p>
-<!--								<h3> error 3: geluid werkt niet</h3>-->
+								<h3> error 3: geluid werkt niet</h3>
+								<p> De code voor het geluid, apart van de volledige code (met rfid en ble) werkte, maar niet met de rest van de code. Een oplossing was om de
+									2de core te gebruiken die ter beschikking is op de esp32.</p>
 						</section>
 
 					</div>
