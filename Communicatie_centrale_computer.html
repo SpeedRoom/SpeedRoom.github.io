@@ -96,11 +96,14 @@
 							<section class="post">
 								<header class="major">
 									<h1>Communicatie Centrale Computer</h1>
-									<p>eventuele tekst</p>
-								</header>
-								<div class="image main"><img src="images/pic02.jpg" class="center"	alt="" style="margin-left: auto;
-  									margin-right: auto;width: 80%; height: 80%" /></div>
-								<p>nog tekst eventuel</p>
+									<p>De centrale computer maakt gebruik van het MQTT protocol om tussen verschillende puzzels te communiceren.
+										MQTT (Message Queuing Telemetry Transport) is een publish/subscribe messaging protocol, wat betekent dat apparaten berichten 
+										naar een centrale 'broker' sturen en andere apparaten zich abonneren op de berichten die ze willen ontvangen.
+										Hier is de Raspberry Pi ingesteld als broker met Mosquitto MQTT, de Raspberry Pi kan zelf ook luisteren en berichten 
+										versturen. De centrale computer is geabonneerd op het topic 'esp_doolhof/output', in dit topic wordt de datum verstuurd 
+										als het balletje het einde van het doolhof bereikt heeft. Als alle nodige gegevens voor een huiszoekingsbevel juist zijn, 
+										stuurt de centrale computer een bericht naar het topic 'esp_gsm/input' dat de schermpjes van de gsm's aan mogen gaan.</p>
+							
 								
 							</section>
 

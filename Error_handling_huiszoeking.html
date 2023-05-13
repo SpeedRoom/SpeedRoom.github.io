@@ -98,24 +98,26 @@
 								<h1>Error Handling huiszoeking</h1>
 							</header>
 								<h3> error 1: antenne werkt niet bij complexe code</h3>
-								<p> Er is teveel interferencie van de schakeling rondom de esp32. De schakeling verder zetten van de antenne kan helpen. In de volgende figuur
-								kan opgemerkt worden dat zeer weinig ble devices ontdekt worden op onze pcb (wij zijn op zoek naar esp32 met adres '7c:9e:bd:ed:58:ia':</p>
+								<p> Er is te veel interferentie van de schakeling rondom de ESP32. Door de schakeling verder weg te zetten van de antenne kan dit probleem worden opgelost. In de volgende figuur
+									is te zien dat er zeer weinig BLE-devices worden ontdekt op onze PCB (wij zijn op zoek naar een ESP32 met adres '7c:9e:bd:ed:58:1a').</p>
 								<img src="images/weinigresultaten.png" alt="" />
-								<p> Halen we de te complexe code weg en focussen alleen op de BLE dan bekomen we het volgende:</p>
+								<p> Wanneer we ons alleen focussen op de BLE en de complexe code weglaten, kunnen we het volgende resultaat verkrijgen: (het gezochte adres wordt gevonden). </p>
 								<img src="images/middelmatigresultaten.png" alt="" />
 								<p> Het adres die werd gezocht wordt nu al gevonden. Nu de eenvoudige code op een doit v1 devkit:</p>
 								<img src="images/weinigresultaten.png" alt="" />
-								<p> Hier worden enorm veel resultaten gevonden. De antenne is dus niet goed genoeg om de complexe code te ondersteunen.
-									Dit is de reden dat er toch een devkit nodig was samen met de eigen pcb. </p>
+								<p>  Door de eenvoudige code op een DOIT v1 Devkit te gebruiken, worden er veel meer resultaten gevonden.
+									De antenne werkt dus niet goed genoeg om de complexe code te ondersteunen. Daarom was het nodig om naast
+									onze eigen PCB ook een Devkit te gebruiken. </p>
 								<h3> error 2: rfid reader onbetrouwbaar</h3>
-								<p> De rfid reader is onbetrouwbaar (toch bij het deel van de hond met complexere code). De ene dag werkt het volledige programma, de andere dag werkt het niet.
-									Er werd opgemerkt dat een minder complexe code (meestal) wel werkt. De onbetrouwbaarheid zat in de irq pin.
-									De oplossing was om de irq pin niet te connecteren, waardoor het programma constant de tag (die er soms niet is) verwerkt.
-									Dit is natuurlijk niet ideaal omdat het veel tijd kost van de processor. Het geluid werd op een andere core geplaatst dan het scannen zodat beide synchroon
-									kunnen verder 'werken', dus voor het geluid is dit geen probleem. MO: de code werkt ook als de irq is aangesloten, maar zeer onbetrouwbaar en stopt meestal na 1 of 2 scans.</p>
+								<p> De RFID reader blijkt onbetrouwbaar te zijn bij het deel van de hond met de complexere code. Het programma werkt de ene dag volledig,
+									terwijl het de andere dag niet werkt. We hebben gemerkt dat een minder complexe code meestal wel werkt. Het probleem zit hem in de IRQ
+									pin. De oplossing was om de IRQ pin niet aan te sluiten, waardoor het programma constant de tag verwerkt (ook als er geen tag is). Dit
+									is natuurlijk niet ideaal, omdat dit veel tijd van de processor kost. Het geluid is naar een andere core verplaatst dan het scannen,
+									zodat beide processen synchroon kunnen blijven werken. Voor het geluid is er dus geen probleem. De code werkt ook als de IRQ is
+									aangesloten, maar is dan zeer onbetrouwbaar en stopt meestal na één of twee scans.</p>
 								<h3> error 3: geluid werkt niet</h3>
-								<p> De code voor het geluid, apart van de volledige code (met rfid en ble) werkte, maar niet met de rest van de code. Een oplossing was om de
-									2de core te gebruiken die ter beschikking is op de esp32.</p>
+								<p> De code voor het geluid werkte apart van de volledige code (met RFID en BLE), maar niet wanneer deze samen gebruikt werden.
+									De oplossing was om de tweede core op de ESP32 te gebruiken, zodat het geluid wel samen met de rest van de code kan werken.</p>
 						</section>
 
 					</div>
