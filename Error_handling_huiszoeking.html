@@ -96,15 +96,24 @@
 						<section class="post">
 							<header class="major">
 								<h1>Error Handling huiszoeking</h1>
-								<p>Hieronder vindt u frequente problemen die zich kunnen voordoen en hoe u deze kunt gaan oplossen als gebruiker.</p>
 							</header>
-								<h3> error 1:</h3>
-								<p>hieronder de oplossing</p>
-								<h3> error 2:</h3>
-								<p>hieronder de oplossing</p>
-
-
-								
+								<h3> error 1: antenne werkt niet bij complexe code</h3>
+								<p> Er is teveel interferencie van de schakeling rondom de esp32. De schakeling verder zetten van de antenne kan helpen. In de volgende figuur
+								kan opgemerkt worden dat zeer weinig ble devices ontdekt worden op onze pcb (wij zijn op zoek naar esp32 met adres '7c:9e:bd:ed:58:ia':</p>
+								<img src="images/weinigresultaten.png" alt="" />
+								<p> Halen we de te complexe code weg en focussen alleen op de BLE dan bekomen we het volgende:</p>
+								<img src="images/middelmatigresultaten.png" alt="" />
+								<p> Het adres die werd gezocht wordt nu al gevonden. Nu de eenvoudige code op een doit v1 devkit:</p>
+								<img src="images/weinigresultaten.png" alt="" />
+								<p> Hier worden enorm veel resultaten gevonden. De antenne is dus niet goed genoeg om de complexe code te ondersteunen.
+									Dit is de reden dat er toch een devkit nodig was samen met de eigen pcb. </p>
+								<h3> error 2: rfid reader onbetrouwbaar</h3>
+								<p> De rfid reader is onbetrouwbaar (toch bij het deel van de hond met complexere code). De ene dag werkt het volledige programma, de andere dag werkt het niet.
+									Er werd opgemerkt dat een minder complexe code (meestal) wel werkt. De onbetrouwbaarheid zat in de irq pin.
+									De oplossing was om de irq pin niet te connecteren, waardoor het programma constant de tag (die er soms niet is) verwerkt.
+									Dit is natuurlijk niet ideaal omdat het veel tijd kost van de processor. Het geluid werd op een andere core geplaatst dan het scannen zodat beide synchroon
+									kunnen verder 'werken', dus voor het geluid is dit geen probleem. MO: de code werkt ook als de irq is aangesloten, maar zeer onbetrouwbaar en stopt meestal na 1 of 2 scans.</p>
+<!--								<h3> error 3: geluid werkt niet</h3>-->
 						</section>
 
 					</div>
