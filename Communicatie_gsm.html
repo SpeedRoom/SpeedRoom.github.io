@@ -97,7 +97,10 @@
 							<header class="major">
 								<h1>Communicatie GSM</h1>
 							</header>
-							<p>Deze puzzel wordt pas geactiveerd indien de eerste 3 puzzels voltooid zijn. De GSM's worden pas ingeschakeld wanneer de broker een signaal stuurt naar de ESP. Zonder de GSM's kan de speler de code niet achterhalen en de puzzel dus niet oplossen.</p>
+							<p>Na het uitspelen van de eerste 3 puzzels, wordt deze puzzel geactiveerd. 
+								Doormiddel van een bericht verstuurd vanuit de MQTT-server worden de 3 gsm's aangeschakeld. 
+								Deze gsm's zijn nodig op de code te achterhalen die de speler vervolgens nodig heeft om in morse-code door te geven. 
+								Als ze de juiste code hebben, dan kunnen ze zo naar de volgende puzzel.</p>
 						</section>
 					</div>
 			</div>
