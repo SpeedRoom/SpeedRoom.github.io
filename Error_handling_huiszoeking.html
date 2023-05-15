@@ -107,14 +107,7 @@
 								<img src="images/veelresultaten.png" alt="" />
 								<p>  Door de eenvoudige code op een DOIT v1 Devkit te gebruiken, worden er veel meer resultaten gevonden.
 									De antenne werkt dus niet goed genoeg om de complexe code te ondersteunen. Daarom was het nodig om naast
-									onze eigen PCB ook een Devkit te gebruiken. </p>
-								<h3> error 2: rfid reader onbetrouwbaar</h3>
-								<p> De RFID reader blijkt onbetrouwbaar te zijn bij het deel van de hond met de complexere code. Het programma werkt de ene dag volledig,
-									terwijl het de andere dag niet werkt. We hebben gemerkt dat een minder complexe code meestal wel werkt. Het probleem zit hem in de IRQ
-									pin. De oplossing was om de IRQ pin niet aan te sluiten, waardoor het programma constant de tag verwerkt (ook als er geen tag is). Dit
-									is natuurlijk niet ideaal, omdat dit veel tijd van de processor kost. Het geluid is naar een andere core verplaatst dan het scannen,
-									zodat beide processen synchroon kunnen blijven werken. Voor het geluid is er dus geen probleem. De code werkt ook als de IRQ is
-									aangesloten, maar is dan zeer onbetrouwbaar en stopt meestal na één of twee scans.</p>
+									onze eigen PCB ook een Devkit te gebruiken.</p>
 								<h3> error 3: geluid werkt niet</h3>
 								<p> De code voor het geluid werkte apart van de volledige code (met RFID en BLE), maar niet wanneer deze samen gebruikt werden.
 									De oplossing was om de tweede core op de ESP32 te gebruiken, zodat het geluid wel samen met de rest van de code kan werken.</p>
