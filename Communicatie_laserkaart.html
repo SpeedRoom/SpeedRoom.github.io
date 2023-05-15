@@ -102,10 +102,10 @@
 								<h1>Communicatie laserkaart</h1>
 								<p>De lasermodule communiceert met de motormodules via ESP-NOW. Dit is een connectieloos communicatieprotocol voor transmissie van 
 									korte berichten tussen ESP32-chips. Om deze communicatie te doen plaatsvinden, wordt op beide modules ESP_NOW geïnitialiseerd en 
-									worden callback functies geregistreerd. Op de lasermodule (de verzendende kant) worden alle motormodules aan de hand van hun 
+									worden callback functies geregistreerd. Op de lasermodule (versturende kant) worden alle motormodules aan de hand van hun 
 									MAC-adres toegevoegd als 'peer', zo wordt een blijvende verbinding tot stand gebracht. Op deze module wordt de callbackfunctie 
 									telkens opgeroepen als een bericht verstuurd wordt, in de callback wordt gezegd of de transmissie gelukt is of niet. 
-									Op de motormodule (de ontvangende kant) wordt de callback opgeroepen als een bericht is aangekomen. De inhoud van het 
+									Op de motormodule (ontvangende kant) wordt de callback opgeroepen als een bericht is aangekomen. De inhoud van het 
 									bericht wordt in deze functie opgeslagen in een variabele voor later gebruik.</p>
 								<p>Aan de hand van de schakelaars kan de gebruiker een motormodule kiezen om te besturen.
 									De lasermodule leest de vrx- en vry-waarden van de joystick uit, slaat die op in een struct en 
